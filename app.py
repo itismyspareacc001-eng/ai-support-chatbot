@@ -29,8 +29,11 @@ import google.generativeai as genai
 # GEMINI CONFIGURATION
 # ==========================================================
 
-GEMINI_API_KEY = "AIzaSyD6XMlVUe3YtUDhrhFx_nkRcOBDP_PFGcg"
+import os
 
+GEMINI_API_KEY = os.getenv(
+    "GEMINI_API_KEY"
+)
 genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel(
